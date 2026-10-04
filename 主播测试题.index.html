@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>测测你是哪个论剑主播</title>
+<style>
+/* 手机优先：题目页面直接进入，选项保持足够大的触控面积 */
+body.quiz-ready .panel{padding-top:24px}
+:root{--bg:#edf5f3;--paper:#fffdf9;--ink:#19353a;--muted:#6f8586;--line:#d8e6e3;--teal:#317d7a;--teal-dark:#245f60;--mint:#dff1ed;--gold:#c59a55;--shadow:0 18px 55px rgba(34,79,81,.12)}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(145deg,#e9f4f2,#f7f6f0 52%,#e9f1ef);color:var(--ink);font-family:"Noto Sans SC","Microsoft YaHei",system-ui,sans-serif;min-height:100vh}button{font:inherit;cursor:pointer}.shell{width:min(760px,92vw);margin:0 auto;padding:28px 0 54px}.top{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:12px;letter-spacing:1px;margin-bottom:24px}.mark{width:34px;height:34px;border:1px solid #7ea9a5;border-radius:50%;display:grid;place-items:center;color:var(--teal);font-weight:700}.panel{background:rgba(255,253,249,.9);border:1px solid rgba(167,198,193,.65);border-radius:24px;box-shadow:var(--shadow);padding:clamp(24px,6vw,52px)}.screen{display:none}.screen.active{display:block}.intro{text-align:center;min-height:650px;display:flex;flex-direction:column;justify-content:center;align-items:center}.kicker{color:var(--teal);letter-spacing:4px;font-size:12px;margin-bottom:18px}.intro h1{font-family:Georgia,"STSong","SimSun",serif;font-size:clamp(37px,8vw,66px);font-weight:600;letter-spacing:3px;line-height:1.22;margin:0}.intro h1 em{font-style:normal;color:var(--teal)}.intro p{max-width:520px;color:var(--muted);font-size:15px;line-height:1.9;margin:24px 0 12px}.note{font-size:12px!important;color:#8a9998!important}.primary{border:0;border-radius:999px;padding:14px 34px;background:var(--teal);color:#fff;box-shadow:0 8px 18px #317d7a33;transition:.2s}.primary:hover{background:var(--teal-dark);transform:translateY(-2px)}.secondary{border:1px solid #a9c5c0;border-radius:999px;padding:11px 21px;background:#fff;color:var(--teal-dark)}.quiz-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:12px}.counter{font-size:13px;color:var(--muted)}.counter strong{font-size:19px;color:var(--teal)}.progress{height:7px;border-radius:8px;background:#e2eeeb;overflow:hidden;margin-bottom:34px}.progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,#4d9991,#b0c865);transition:width .35s}.question-no{font-size:12px;color:var(--teal);letter-spacing:2px;margin-bottom:11px}.question{font-size:clamp(23px,4.6vw,31px);line-height:1.45;margin:0 0 26px;font-weight:650}.options{display:grid;gap:12px}.option{display:flex;gap:14px;align-items:flex-start;text-align:left;border:1px solid var(--line);border-radius:15px;padding:15px 16px;background:#fff;transition:.18s;color:var(--ink);line-height:1.65}.option:hover{border-color:#77aaa5;background:#f5fbfa;transform:translateY(-1px)}.letter{width:29px;height:29px;flex:none;border-radius:50%;display:grid;place-items:center;background:var(--mint);color:var(--teal-dark);font-size:13px;font-weight:700}.option span:last-child{flex:1}.quiz-foot{display:flex;justify-content:space-between;align-items:center;margin-top:26px;min-height:42px}.tip{font-size:12px;color:var(--muted)}.result{text-align:center}.result .kicker{margin-bottom:10px}.result h2{margin:0;font-family:Georgia,"STSong",serif;font-size:clamp(36px,8vw,56px);letter-spacing:5px;color:var(--teal-dark)}.result-sub{margin:13px auto 24px;color:var(--muted);font-size:14px}.badge{display:inline-block;padding:7px 14px;border-radius:999px;background:var(--mint);color:var(--teal-dark);font-size:12px;margin:0 4px 6px}.quote{margin:22px auto;padding:20px 22px;border-left:4px solid var(--gold);background:#fffaf0;text-align:left;line-height:1.9;color:#4d6666;border-radius:0 14px 14px 0}.result-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;text-align:left;margin:18px 0}.info{border:1px solid var(--line);border-radius:14px;padding:15px;background:#fbfdfc}.info h3{font-size:12px;color:var(--teal);letter-spacing:1px;margin:0 0 8px}.info p{font-size:13px;line-height:1.75;margin:0;color:#546e6d}.bars{margin:22px 0;text-align:left}.bar-row{display:grid;grid-template-columns:74px 1fr 34px;gap:9px;align-items:center;margin:9px 0;font-size:12px;color:var(--muted)}.bar{height:8px;background:#e4efec;border-radius:8px;overflow:hidden}.bar i{display:block;height:100%;background:linear-gradient(90deg,#4b9690,#c59a55);border-radius:8px}.actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:24px}.fineprint{font-size:11px;color:#91a09f;line-height:1.7;margin-top:24px}.toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#193d40;color:#fff;padding:11px 16px;border-radius:999px;font-size:12px;transition:.25s}.toast.show{opacity:1;transform:translate(-50%,0)}@media(max-width:580px){.shell{padding-top:16px}.panel{border-radius:20px;padding:23px 17px}.intro{min-height:calc(100vh - 95px)}.result-grid{grid-template-columns:1fr}.quiz-foot{align-items:flex-start;gap:8px;flex-direction:column}.quiz-foot button{align-self:flex-end}.question{font-size:24px}.option{font-size:15px}}
+</style>
+</head>
+<body>
+<div class="shell">
+  <div class="top"><span>论剑主播图鉴 · 娱乐测试</span><span class="mark">剑</span></div>
+  <main class="panel">
+    <section id="intro" class="screen active intro">
+      <div class="kicker">YANYUN · LUNJIAN</div>
+      <h1>测测你是哪个<br><em>论剑主播</em></h1>
+      <p>15 道场景题，看看你的直播气质、流派信仰和江湖处事方式，最像哪位论剑主播。</p>
+      <p class="note">本测试根据直播风格与玩家印象制作，仅供娱乐，不代表任何主播本人的真实人格或官方立场。</p>
+      <button class="primary" id="startBtn">开始测试</button>
+    </section>
+    <section id="quiz" class="screen">
+      <div class="quiz-head"><span class="counter">第 <strong id="current">1</strong> / 15 题</span><span id="percent" class="counter">0%</span></div>
+      <div class="progress"><i id="progressBar"></i></div>
+      <div class="question-no" id="questionNo">QUESTION 01</div>
+      <h2 class="question" id="questionText"></h2>
+      <div class="options" id="options"></div>
+      <div class="quiz-foot"><span class="tip">凭第一反应选择即可</span><button class="secondary" id="backBtn" style="display:none">上一题</button></div>
+    </section>
+    <section id="result" class="screen result">
+      <div class="kicker">你的论剑主播画像</div>
+      <h2 id="resultName"></h2>
+      <div class="result-sub" id="resultSubtitle"></div>
+      <div id="tags"></div>
+      <div class="quote" id="resultQuote"></div>
+      <div class="result-grid"><div class="info"><h3>为什么是他</h3><p id="reason"></p></div><div class="info"><h3>你的关键词</h3><p id="keywords"></p></div></div>
+      <div class="bars" id="bars"></div>
+      <div class="actions"><button class="primary" id="restartBtn">再测一次</button><button class="secondary" id="copyBtn">复制结果</button></div>
+      <div class="fineprint">结果由答题倾向综合计算；如果两个结果分数接近，说明你同时拥有两种主播气质。</div>
+    </section>
+  </main>
+</div>
+<div class="toast" id="toast"></div>
+<script>
+const dims=['实力','信仰','打法','节目','开团','抗压','粉丝','关系','教学','吃瓜','稳定','边界'];
+const dimWeight=[1.35,1.12,1.08,1.05,1.08,1.06,1.02,.95,.95,.9,.78,.82];
+const profiles=[
+{id:'冲就',subtitle:'版本适应力拉满的雇佣兵',tags:['实力强','抗压强','啥强玩啥'],keywords:'接单、版本答案、佛系抗压',quote:'流派可以换，单子不能断。今天什么强，就玩什么。',reason:'你对胜负和效率很敏感，但不太执着于固定流派。面对争议，你更愿意把事情扛过去，继续做自己的事。',v:[5,1,2,2,2,5,2,2,1,1,3,3],ideal:[4,2,1,1,4,4,1,3,1,4,2,1,2,1,2]},
+{id:'珏',subtitle:'把直播间经营成热闹江湖的人',tags:['会整活','粉丝活跃','乐子人'],keywords:'互动、礼物、吃瓜、节目效果',quote:'先把直播间气氛做起来，瓜慢慢吃，钱慢慢赚。',reason:'你很懂得经营互动，也愿意把热点、对赌和直播礼物变成节目的一部分；观众在你这里总能找到参与感。',v:[3,2,4,5,3,4,5,3,1,5,3,3],ideal:[2,4,2,3,4,3,3,1,3,1,4,1,3,3,4]},
+{id:'埋',subtitle:'有流派信仰的撒娇型选手',tags:['流派信仰','特殊打法','容易破防'],keywords:'鸣金虹、弓箭、撒娇、情绪',quote:'我就喜欢这个流派嘛……你们让让我怎么了。',reason:'你认定一个招牌打法后会坚持很久，输了也容易把情绪写在脸上；但你的可爱和撒娇，常常能换来观众的包容。',v:[3,5,4,3,1,1,3,2,1,1,3,3],ideal:[3,3,2,1,1,3,2,2,1,3,4,3,2,4,1]},
+{id:'薄青',subtitle:'谁都能一起玩的圆融乐子人',tags:['关系圆融','冲突低','很有梗'],keywords:'八面玲珑、联动、轻松、少站队',quote:'大家都是朋友，先玩起来再说。',reason:'你不太热衷硬碰硬，更擅长把不同的人都聊到一起。实力不是唯一重点，舒服的关系和好玩的直播才是。',v:[1,1,2,5,0,4,3,5,1,1,3,3],ideal:[2,2,2,2,2,3,4,1,1,4,2,2,4,4,3]},
+{id:'凉神',subtitle:'哪里有风浪，哪里就有你的直播间',tags:['阴间打法','爱开团','抗压极强'],keywords:'双镖、开团、查挂、腥风血雨',quote:'既然都开团了，那就把节目效果做足。',reason:'你不怕争议，也不怕树敌，甚至能把风波本身变成流量。打法和表达都很有攻击性，越热闹越有发挥空间。',v:[4,2,5,5,5,5,2,1,1,5,3,5],ideal:[2,3,4,1,2,3,1,3,3,3,1,2,2,3,4]},
+{id:'一岚',subtitle:'把竞争和关系都算得很清楚的人',tags:['有竞争力','流派理解','心思细'],keywords:'九五、竞争、结盟、心眼',quote:'我当然有自己的理解，也知道该和谁站在一起。',reason:'你有强烈的胜负心和自己的体系，早期愿意照顾身边人；但你对关系和输赢都比较敏感，情绪也容易被触发。',v:[3,5,2,2,4,1,2,2,3,2,3,5],ideal:[4,3,1,3,2,3,2,3,2,1,4,4,1,4,4]},
+{id:'风不臣',subtitle:'把大流量做成个人风格的人',tags:['流量大','联动强','节目效果好'],keywords:'出圈、厚脸皮、提携、藏剑',quote:'来都来了，先把这波节目效果做满。',reason:'你很会制造记忆点，也愿意主动联动和提携别人。你的打法未必最极端，但直播间总有办法让观众留下来。藏剑老师是你的白月光，白龙是你的最佳皮套。',v:[3,2,2,5,2,4,4,5,1,1,4,4],ideal:[2,3,4,4,1,1,2,1,4,1,2,1,2,3,1]},
+{id:'剑寻',subtitle:'偶尔露出獠牙的深藏不露者',tags:['实力极强','藏拙','娱乐化'],keywords:'双冠、低调、变声器、关键局',quote:'平时玩得开心就好，真要认真打的时候再说。',reason:'你不喜欢把底牌一直摊在桌面上，也不愿为了流量绑定暧昧关系。看起来在娱乐，关键时候却能突然拿出真正实力。',v:[5,1,2,4,0,5,3,3,2,0,3,1],ideal:[3,1,1,1,4,2,2,1,3,2,2,3,4,1,1]},
+{id:'乔家劲',subtitle:'每天准时出现的踏实教学派',tags:['作息规律','认真教学','稳定输出'],keywords:'早播、教学、坚持、镜头',quote:'先把今天的内容讲明白，观众自然会留下来。',reason:'你重视规律和积累，愿意把时间花在教学与稳定更新上。表达不浮夸，但可靠、持续，偶尔也懂得用一点个人魅力吸引目光。',v:[3,3,1,3,0,4,3,2,5,0,5,3],ideal:[1,4,2,4,3,2,2,1,2,2,2,2,2,4,4]},
+{id:'齐天',subtitle:'有流派信仰的谨慎老大哥',tags:['老大哥','陌刀信仰','谨慎仗义'],keywords:'整活、讲义气、边界清楚、稳',quote:'朋友可以一起玩，绑定炒作就免了。',reason:'你愿意照顾熟人，也有自己的固定流派和处事原则。热闹可以看，关系可以处，但你会把边界和风险看得很清楚。',v:[3,5,2,4,1,4,3,5,2,0,3,1],ideal:[1,3,1,4,1,2,3,2,2,4,4,4,2,2,2]},
+{id:'后视镜',subtitle:'知道得多，也忍不住说出来的人',tags:['脾气爆','消息灵通','熟人仗义'],keywords:'开团、爆料、秘辛、护短',quote:'这事我知道得比你们多，先把话说清楚。',reason:'你对不公和冲突的反应很快，手里也常有不少圈内消息。对关系好的人很仗义，但情绪上来时，嘴比刹车快。',v:[3,2,3,3,5,1,3,3,1,5,3,4],ideal:[3,2,2,4,4,1,1,3,3,1,3,4,4,3,2]},
+{id:'卡比兽',subtitle:'把情绪写在直播间的人',tags:['节目效果','玻璃心','关系起伏'],keywords:'敏感、真性情、容易受伤、退场',quote:'我只是想好好直播，怎么又变成这样了。',reason:'你很在意观众和他人的反馈，也能做出不错的节目效果；但当负面评价累积时，你比别人更容易受伤和失去动力。',v:[2,2,2,4,3,0,1,1,1,2,2,5],ideal:[3,3,2,4,2,2,4,3,4,2,1,4,3,2,1]}
+];
+const questions=[{q:'新版本出现了一个明显强势的流派，你会？',o:[['马上转练，版本答案不能放过',{实力:4,信仰:0,打法:2,稳定:2}],['坚持自己的招牌流派，输也要有信仰',{实力:2,信仰:5,打法:2}],['研究一个更怪、更难处理的反套路',{实力:2,信仰:1,打法:5,节目:2}],['先研究透，再整理成教学内容',{实力:2,教学:5,稳定:3}]]},
+{q:'你最想做哪种直播内容？',o:[['高强度排位、冲榜和接单',{实力:5,抗压:4,稳定:2}],['固定流派教学与深度复盘',{教学:5,信仰:3,稳定:4}],['奇怪套路挑战和娱乐对局',{打法:5,节目:5}],['连麦聊天、吃瓜和制造节目效果',{节目:5,关系:4,吃瓜:3}]]},
+{q:'你最喜欢哪种对局方式？',o:[['正面拼操作，赢得堂堂正正',{实力:5,打法:1}],['拉扯磨血，慢慢把对手耗死',{打法:5,实力:2}],['哪个版本强就玩哪个，赢法不重要',{实力:4,信仰:0,打法:3}],['用冷门或阴间套路打对手一个措手不及',{打法:5,节目:3,开团:2}]]},
+{q:'最近直播流量明显下滑，你会？',o:[['赶紧整活，先把观众留住',{节目:5,粉丝:3}],['借热点开团引流，讲点圈内故事',{开团:5,吃瓜:5,节目:4}],['按原计划继续播，慢慢熬回来',{稳定:5,抗压:3}],['暂时停播几天，等状态恢复再说',{稳定:1,抗压:0}]]},
+{q:'观众一直要求你展示真实实力，你会？',o:[['平时藏着，关键局再亮出来',{实力:5,边界:5}],['直接约高手，用对局证明自己',{实力:5,抗压:4}],['开娱乐局，把实力问题变成节目效果',{节目:5,实力:2}],['做一期完整教学，系统讲清楚自己的理解',{教学:5,实力:3}]]},
+{q:'如果圈内突然出现一场风波，你会？',o:[['风波就是我挑起来的，唯爱开团',{开团:5,吃瓜:4,节目:3}],['保持中立，坚决不参与',{开团:0,边界:5,稳定:3}],['上麦说话，主动站队对峙',{开团:5,关系:2,抗压:4}],['立刻开播吃瓜，看热闹不嫌事大',{吃瓜:5,节目:4,开团:3}]]},
+{q:'如果有其他主播频繁和你互动，甚至主动暗示暧昧关系，你会？',o:[['明确拒绝，不接受绑定或炒作',{边界:5,关系:1}],['礼貌回避，不主动配合',{边界:4,关系:2}],['可以接梗，但不会主动制造暧昧',{边界:2,节目:3,关系:3}],['大方配合，甚至主动把互动变成直播内容',{边界:0,节目:5,关系:4}]]},
+{q:'如果要给长期支持你的粉丝准备等级礼物，你会？',o:[['花时间做一份有个人心意的礼物',{粉丝:5,教学:1,稳定:3}],['直接花钱买比较贵、比较实用的礼物',{粉丝:4,关系:3}],['准备一份正常的小礼物，认真表达感谢',{粉丝:3,关系:3}],['礼物不是重点，简单准备一下就好',{粉丝:0,边界:3}]]},
+{q:'你对粉丝制作的二创内容是什么态度？',o:[['积极转发、评论，还会主动鼓励',{粉丝:5,关系:4,节目:2}],['不太喜欢，甚至会要求对方停止传播',{粉丝:0,边界:5}],['会口头鼓励，但平时很少认真互动',{粉丝:2,关系:2}],['正常感谢，偶尔点赞或回复',{粉丝:3,关系:3}]]},
+{q:'有人怀疑对手使用了不正常手段，你会？',o:[['先保存证据，认真核实',{教学:3,稳定:4,开团:1}],['当场质问，直接把事情说开',{开团:5,抗压:3}],['一边吃瓜，一边把消息告诉观众',{吃瓜:5,节目:3}],['不管真假，先把这局打赢再说',{实力:5,抗压:4}]]},
+{q:'和你关系不错的主播被公开质疑，你会？',o:[['直接站出来支持朋友',{关系:5,开团:3}],['先私下了解事情到底怎么回事',{关系:3,稳定:4,边界:3}],['顺便把自己知道的内幕讲出来',{吃瓜:5,开团:3}],['尽量不站队，给以后联动留余地',{关系:4,边界:5}]]},
+{q:'直播时有人连续质疑你的操作，你最可能？',o:[['直接回击，让对方别指手画脚',{开团:5,抗压:2}],['越说越委屈，减少互动甚至提前下播',{抗压:0,稳定:1,粉丝:1}],['开个玩笑，把尴尬变成节目效果',{节目:5,抗压:3}],['耐心解释自己的思路和判断',{教学:5,稳定:4}]]},
+{q:'有新人主播邀请你联动，你会优先考虑？',o:[['对方有没有节目效果，能不能玩得开心',{节目:5,关系:3}],['对方实力、风评和做事方式怎么样',{实力:2,边界:4,关系:2}],['只要聊得来，尽量都维持关系',{关系:5,开团:0}],['能不能借这个机会带对方涨点流量',{关系:5,粉丝:4,节目:3}]]},
+{q:'你理想中的直播状态是？',o:[['早起准时开播，每天稳定完成内容',{稳定:5,教学:2}],['有单、有比赛或有热点时再开播',{稳定:2,实力:3,抗压:3}],['根据当天状态和直播效果灵活调整',{节目:4,稳定:2,抗压:2}],['固定安排教学、复盘和长期内容',{教学:5,稳定:5}]]},
+{q:'你最希望观众记住你的哪一点？',o:[['“这个主播是真有实力。”',{实力:5}],['“这个直播间特别有节目效果。”',{节目:5}],['“这个主播对粉丝挺用心。”',{粉丝:5,关系:3}],['“他总能玩出别人想不到的流派和套路。”',{打法:5,信仰:3}]]}
+];
+let answers=[],current=0;
+const $=id=>document.getElementById(id);
+function show(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));$(id).classList.add('active');window.scrollTo({top:0,behavior:'smooth'})}
+function renderQuestion(){let x=questions[current];$('current').textContent=current+1;$('percent').textContent=Math.round(current/questions.length*100)+'%';$('progressBar').style.width=(current/questions.length*100)+'%';$('questionNo').textContent='QUESTION '+String(current+1).padStart(2,'0');$('questionText').textContent=x.q;$('options').innerHTML=x.o.map((o,i)=>`<button class="option" data-i="${i}"><span class="letter">${'ABCD'[i]}</span><span>${o[0]}</span></button>`).join('');document.querySelectorAll('.option').forEach(b=>b.addEventListener('click',()=>choose(+b.dataset.i)));$('backBtn').style.display=current?'inline-block':'none'}
+function choose(i){answers[current]=i;if(current<questions.length-1){current++;renderQuestion()}else finish()}
+function distance(a,b){return a.reduce((s,x,i)=>s+dimWeight[i]*(x-b[i])**2,0)}
+function calculate(){let totals=Array(dims.length).fill(0);answers.forEach((ai,qi)=>{let e=questions[qi].o[ai][1];dims.forEach((d,i)=>totals[i]+=e[d]||0)});let avg=totals.map(x=>x/questions.length*1.25);let scored=profiles.map(p=>{let base=-distance(avg,p.v)*0.02;let matches=answers.reduce((n,a,i)=>n+(a===p.ideal[i]?1:0),0);let near=answers.reduce((n,a,i)=>n+(Math.abs(a-p.ideal[i])===1?.1:0),0);let rule=0;
+// 强指向题：作为结果修正，不覆盖其他答案。
+if(answers[5]===0){if(p.id==='凉神'||p.id==='珏')rule+=24;if(p.id==='后视镜')rule+=14;}
+if(answers[6]===0){if(p.id==='剑寻'||p.id==='齐天')rule+=22;if(p.id==='一岚'||p.id==='凉神'||p.id==='卡比兽')rule-=22;}
+if(answers[6]===3){if(p.id==='一岚'||p.id==='凉神'||p.id==='卡比兽')rule+=22;if(p.id==='剑寻'||p.id==='齐天')rule-=22;}
+if(answers[7]===0&&p.id==='珏')rule+=24;
+if(answers[7]===1&&p.id==='乔家劲')rule+=24;
+if(answers[7]===3&&['一岚','凉神','风不臣'].includes(p.id))rule+=15;
+if(answers[8]===0&&p.id==='冲就')rule+=24;
+if(answers[8]===1&&['剑寻','风不臣'].includes(p.id))rule+=22;
+if(answers[8]===2&&['埋','薄青','卡比兽','齐天','珏'].includes(p.id))rule+=14;
+return {...p,score:base+matches*100+near+rule, matches,avg}}).sort((a,b)=>b.score-a.score);return {top:scored[0],second:scored[1],all:scored,avg}}
+function finish(){let r=calculate();$('resultName').textContent=r.top.id;$('resultSubtitle').textContent=r.top.subtitle+' · 匹配度 '+Math.min(99,Math.max(68,Math.round(72+r.top.matches/15*24)))+'%';$('tags').innerHTML=r.top.tags.map(t=>`<span class="badge">${t}</span>`).join('');$('resultQuote').textContent=r.top.quote;$('reason').textContent=r.top.reason;$('keywords').textContent=r.top.keywords+'。第二接近：'+r.second.id;let max=Math.max(...r.top.avg);let ranked=r.top.avg.map((v,i)=>({d:dims[i],v})).sort((a,b)=>b.v-a.v).slice(0,5);$('bars').innerHTML=ranked.map(x=>`<div class="bar-row"><span>${x.d}</span><div class="bar"><i style="width:${Math.min(100,Math.round(x.v/max*100))}%"></i></div><b>${Math.round(x.v)}</b></div>`).join('');show('result');window.lastResult=r}
+$('startBtn').onclick=()=>{answers=[];current=0;show('quiz');renderQuestion()};$('backBtn').onclick=()=>{if(current>0){current--;renderQuestion()}};$('restartBtn').onclick=()=>{$('startBtn').click()};$('copyBtn').onclick=async()=>{let t='我测出来是「'+window.lastResult.top.id+'」——'+window.lastResult.top.subtitle+'。你也来测测你是哪个论剑主播！';try{await navigator.clipboard.writeText(t);toast('结果已复制')}catch(e){toast(t)}};
+function toast(t){$('toast').textContent=t;$('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),2400)}
+window.runSelfTest=()=>profiles.map(p=>{let old=answers;answers=p.ideal.slice();let r=calculate().top.id;answers=old;return {target:p.id,got:r,ok:r===p.id}});
+</script>
+</body>
+</html>
+
+
+
